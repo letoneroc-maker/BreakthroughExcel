@@ -2,11 +2,14 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from "vite-tsconfig-paths";
 import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
+import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   build: {
     sourcemap: 'hidden',
+    outDir: 'dist'
   },
   plugins: [
     react({
@@ -27,4 +30,9 @@ export default defineConfig({
     }), 
     tsconfigPaths()
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
 })
