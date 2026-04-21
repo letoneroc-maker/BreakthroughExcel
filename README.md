@@ -1,57 +1,62 @@
-# React + TypeScript + Vite
+# Excel数据分析工具
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A powerful Excel data analysis tool for processing Excel files, extracting fields, performing data operations, and visualizing analysis.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Data Processing**: Support for uploading multiple Excel files, extracting fields, drag-and-drop preview, field sorting, and function operations
+- **Data Visualization**: Support for multiple chart types (bar charts, line charts, pie charts, etc.), data preview, and statistical analysis
+- **Export Functionality**: Export processed data to new Excel files, save configurations for future use
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Frontend: React@18 + TypeScript + Tailwind CSS + Vite
+- Data Processing: ExcelJS
+- Data Visualization: Chart.js
+- State Management: Zustand
+- Build Tool: Electron (supports desktop applications)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation and Running
+
+### Development Mode
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Build Desktop Application
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  extends: [
-    // other configs...
-    // Enable lint rules for React
-    reactX.configs['recommended-typescript'],
-    // Enable lint rules for React DOM
-    reactDom.configs.recommended,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+# Build and package as desktop application
+npm run electron:build
 ```
+
+After building, executable files will be generated in the `dist-electron` directory.
+
+## Usage
+
+1. **Data Processing Page**: Upload Excel files, extract fields from files, drag fields to the preview area to view data
+2. **Data Visualization Page**: Select chart types, view data visualization effects and statistical analysis
+3. **Export Page**: Export processed data to Excel files, save configurations for future use
+
+## System Requirements
+
+- Windows 7+ or macOS 10.13+
+- At least 4GB of memory
+- Modern browser support (Chrome, Firefox, Safari, Edge)
+
+## Offline Use
+
+This application supports offline use, no internet connection required to run all features.
+
+## License
+
+MIT
+
+---
+
+[中文README](README_zh.md)
