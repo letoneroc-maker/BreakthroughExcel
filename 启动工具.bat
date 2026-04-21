@@ -6,8 +6,7 @@ echo ==========================================
 echo.
 echo 正在启动工具...
 echo.
-cd dist
-start index.html
+start "Excel数据分析工具" "%~dp0dist\index.html"
 echo.
 echo 工具已在浏览器中打开！
 echo.
