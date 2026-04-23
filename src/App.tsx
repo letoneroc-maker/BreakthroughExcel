@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+=======
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+>>>>>>> origin/main
 import Navbar from './components/Navbar';
 import DataProcessingPage from './pages/DataProcessingPage';
 import VisualizationPage from './pages/VisualizationPage';
