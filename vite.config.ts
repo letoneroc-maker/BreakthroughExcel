@@ -9,7 +9,12 @@ export default defineConfig({
   base: './',
   build: {
     sourcemap: 'hidden',
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   plugins: [
     react({
